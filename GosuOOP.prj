@@ -1,0 +1,28 @@
+{
+  "Title": "Gosu Experiment",
+  "Version": 2,
+  "Name": "GosuOOP",
+  "ActiveTab": "src/main/gosu/scratch/RunMe.gsp",
+  "Tabs": [
+    "src/main/gosu/scratch/RunMe.gsp"
+  ],
+  "SourcePath": [
+    "src/main/gosu"
+  ],
+  "BackingSource": [
+    "/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/src.zip"
+  ],
+  "RunConfigs": [  ],
+  "MruRunConfig": null,
+  "Settings": [
+    {
+      "$construct_type": "editor.settings.CompilerSettings",
+      "_params": {
+        "$construct_type": "editor.settings.CompilerSettingsParameters",
+        "_sourceBased": 1,
+        "_ouputPath": "classes"
+      }
+    }
+  ],
+  "MruSettings": null
+}
