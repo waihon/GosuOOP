@@ -1,7 +1,7 @@
 package classes
 
 class TextBox {
-  var text: String
+  var _text: String
   
   property Text: String
 }
