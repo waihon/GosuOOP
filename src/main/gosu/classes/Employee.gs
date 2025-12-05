@@ -9,6 +9,9 @@ class Employee {
   }
   
   property set BaseSalary(value: int) {
+    if (value <= 0) {
+      throw new IllegalArgumentException("Base salary must be greater than zero.")
+    }
     _baseSalary = value
   }
   
@@ -17,6 +20,9 @@ class Employee {
   }
   
   property set HourlyRate(value: int) {
+    if (value <= 0) {
+      throw new IllegalArgumentException("Hourly rate must be greater than zero.")
+    }
     _hourlyRate = value  
   }
   
