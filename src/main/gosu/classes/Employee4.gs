@@ -12,4 +12,8 @@ class Employee4 {
   function calculateWage(extraHours: int): int {
     return _baseSalary + (_hourlyRate * extraHours)
   }
+
+  function calculateWage(): int {
+    return calculateWage(0)
+  }
 }
