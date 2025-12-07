@@ -4,6 +4,10 @@ class Employee4 {
   var _baseSalary: int as readonly BaseSalary
   var _hourlyRate: int as readonly HourlyRate
 
+  construct(baseSalary: int) {
+    this(baseSalary, 0)
+  }
+
   construct(baseSalary: int, hourlyRate: int) {
     _baseSalary = baseSalary
     _hourlyRate = hourlyRate
