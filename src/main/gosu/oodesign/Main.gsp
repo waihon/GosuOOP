@@ -1,3 +1,3 @@
 package oodesign
 
-MortgagePaymentSchedule.main()
+MortgageReport.main()

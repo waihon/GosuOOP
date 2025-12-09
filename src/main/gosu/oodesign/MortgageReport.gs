@@ -2,7 +2,7 @@ package oodesign
 
 uses java.text.NumberFormat
 
-class MortgagePaymentSchedule {
+class MortgageReport {
   static function main() {
     var scanner = new Scanner(System.in)
 
