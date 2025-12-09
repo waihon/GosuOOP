@@ -1,12 +1,19 @@
 package oodesign
 
 class Console {
+  private static var scanner = new Scanner(System.in)
+
+  static function readNumber(prompt: String) : double {
+    System.out.print(prompt)
+
+    return scanner.nextDouble()
+  }
+
   static function readNumber(
       prompt: String,
       minValue: double,
       maxValue: double): double {
     
-    var scanner = new Scanner(System.in)
     var number: double
     
     while (true) {
