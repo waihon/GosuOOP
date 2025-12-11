@@ -56,11 +56,11 @@ class MortgageCalculator {
       / (Math.pow(1 + MonthlyRate, PeriodInMonths) - 1)
   }
 
-  private property get MonthlyRate() : double {
+  property get MonthlyRate() : double {
     return _annualRate / PERCENT / MONTHS_IN_YEAR
   }
 
-  private property get PeriodInMonths() : int {
+  property get PeriodInMonths() : int {
     return _periodInYears * MONTHS_IN_YEAR
   }
 
