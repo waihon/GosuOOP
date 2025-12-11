@@ -4,11 +4,9 @@ uses java.text.NumberFormat
 
 class MortgageReport {
   static function main() {
-    var scanner = new Scanner(System.in)
-
-    var principal: int = MortgageInput.readPrincipal()
-    var annualRate: double = MortgageInput.readAnnualRate()
-    var periodInYears: int = MortgageInput.readPeriodInYears()
+    var principal : int = MortgageInput.readPrincipal()
+    var annualRate : double = MortgageInput.readAnnualRate()
+    var periodInYears : int = MortgageInput.readPeriodInYears()
     print("")
 
     printMortgage(principal, annualRate, periodInYears)
@@ -16,8 +14,9 @@ class MortgageReport {
     printPaymentSchedule(principal, annualRate, periodInYears)
   }
 
-  static function printMortgage(principal: int, annualRate: double, periodInYears: int) {
-    var mortgage = MortgageCalculator.calculateMortgage(principal, annualRate, periodInYears)
+  static function printMortgage(principal : int, annualRate : double, periodInYears : int) {
+    var calculator = new MortgageCalculator(principal, annualRate, periodInYears)
+    var mortgage = calculator.calculateMortgage()
     var mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage)
 
     print("MORTGAGE")
@@ -25,16 +24,15 @@ class MortgageReport {
     print("Monthly Payments: ${mortgageFormatted}")
     print("")
   }
-  
+
   static function printPaymentSchedule(principal: int, annualRate: double, periodInYears: int) {
-    var monthlyRate = MortgageCalculator.getMonthlyRate(annualRate)
-    var periodInMonths = MortgageCalculator.getPeriodInMonths(periodInYears)
+    var calculator = new MortgageCalculator(principal, annualRate, periodInYears)
 
     print("PAYMENT SCHEDULE")
     print("----------------")
 
-    for (numberOfPaymentsMade in 1..periodInMonths) {
-      var loanBalance = MortgageCalculator.calculateBalance(principal, annualRate, periodInYears, numberOfPaymentsMade)
+    for (numberOfPaymentsMade in 1..calculator.PeriodInMonths) {
+      var loanBalance = calculator.calculateBalance(numberOfPaymentsMade)
       var loanBalanceFormatted = NumberFormat.getCurrencyInstance().format(loanBalance)
       print(loanBalanceFormatted)
     }
