@@ -3,20 +3,28 @@ package oodesign
 uses java.text.NumberFormat
 
 class MortgageReport {
+  var _calculator : MortgageCalculator
+
+  construct(calculator : MortgageCalculator) {
+    _calculator = calculator
+  }
+
   static function main() {
     var principal : int = MortgageInput.readPrincipal()
     var annualRate : double = MortgageInput.readAnnualRate()
     var periodInYears : int = MortgageInput.readPeriodInYears()
     print("")
 
-    printMortgage(principal, annualRate, periodInYears)
+    var calculator = new MortgageCalculator(principal, annualRate, periodInYears)
+    var report = new MortgageReport(calculator)
 
-    printPaymentSchedule(principal, annualRate, periodInYears)
+    report.printMortgage()
+
+    report.printPaymentSchedule()
   }
 
-  static function printMortgage(principal : int, annualRate : double, periodInYears : int) {
-    var calculator = new MortgageCalculator(principal, annualRate, periodInYears)
-    var mortgage = calculator.calculateMortgage()
+  function printMortgage() {
+    var mortgage = _calculator.calculateMortgage()
     var mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage)
 
     print("MORTGAGE")
@@ -25,14 +33,12 @@ class MortgageReport {
     print("")
   }
 
-  static function printPaymentSchedule(principal: int, annualRate: double, periodInYears: int) {
-    var calculator = new MortgageCalculator(principal, annualRate, periodInYears)
-
+  function printPaymentSchedule() {
     print("PAYMENT SCHEDULE")
     print("----------------")
 
-    for (numberOfPaymentsMade in 1..calculator.PeriodInMonths) {
-      var loanBalance = calculator.calculateBalance(numberOfPaymentsMade)
+    for (numberOfPaymentsMade in 1.._calculator.PeriodInMonths) {
+      var loanBalance = _calculator.calculateBalance(numberOfPaymentsMade)
       var loanBalanceFormatted = NumberFormat.getCurrencyInstance().format(loanBalance)
       print(loanBalanceFormatted)
     }
