@@ -39,11 +39,8 @@ class MortgageCalculator {
     // When principal = 100,000, annualRate = 3.92, periodInYears = 30, the mortgage payment should be 472.81
     // When principal = 180,000, annualRate = 4.00, periodInYears = 10, the mortgage payment should be 1,822.41
 
-    var monthlyRate: double = MonthlyRate
-    var periodInMonths: int = PeriodInMonths
-    var compoundingFactor: double = CompoundingFactor
 
-    var mortgage: double = _principal * (monthlyRate * compoundingFactor) / (compoundingFactor - 1.0)
+    var mortgage: double = _principal * (MonthlyRate * CompoundingFactor) / (CompoundingFactor - 1.0)
     mortgage = Math.round(mortgage * 100.0) / 100.0 // round to 2 decimal places
 
     return mortgage
