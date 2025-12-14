@@ -46,18 +46,27 @@ class MortgageCalculator {
     return mortgage
   }
 
-
   function calculateBalance(numOfPaymentsMade : int) : double {
     return _principal
       * (Math.pow(1 + MonthlyRate, PeriodInMonths) - Math.pow(1 + MonthlyRate, numOfPaymentsMade))
       / (Math.pow(1 + MonthlyRate, PeriodInMonths) - 1)
   }
 
-  property get MonthlyRate() : double {
+  function getRemainingBalances() : double[] {
+    var balances = new double[PeriodInMonths]
+
+    for (month in 1..PeriodInMonths) {
+      balances[month - 1] = calculateBalance(month)
+    }
+
+    return balances
+  }
+
+  private property get MonthlyRate() : double {
     return _annualRate / PERCENT / MONTHS_IN_YEAR
   }
 
-  property get PeriodInMonths() : int {
+  private property get PeriodInMonths() : int {
     return _periodInYears * MONTHS_IN_YEAR
   }
 
