@@ -37,10 +37,8 @@ class MortgageReport {
     print("PAYMENT SCHEDULE")
     print("----------------")
 
-    for (numberOfPaymentsMade in 1.._calculator.PeriodInMonths) {
-      var loanBalance = _calculator.calculateBalance(numberOfPaymentsMade)
-      var loanBalanceFormatted = NumberFormat.getCurrencyInstance().format(loanBalance)
-      print(loanBalanceFormatted)
+    for (balance in _calculator.getRemainingBalances()) {
+      print(NumberFormat.getCurrencyInstance().format(balance))
     }
   }
 }
