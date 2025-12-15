@@ -2,9 +2,9 @@
   "Title": "Gosu Experiment",
   "Version": 2,
   "Name": "GosuOOP",
-  "ActiveTab": "src/main/gosu/scratch/RunMe.gsp",
+  "ActiveTab": "src/main/gosu/oodesign/Main.gsp",
   "Tabs": [
-    "src/main/gosu/scratch/RunMe.gsp"
+    "src/main/gosu/oodesign/Main.gsp"
   ],
   "SourcePath": [
     "src/main/gosu"
@@ -12,8 +12,35 @@
   "BackingSource": [
     "/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/src.zip"
   ],
-  "RunConfigs": [  ],
-  "MruRunConfig": null,
+  "RunConfigs": [
+    {
+      "$construct_type": "editor.run.ProgramRunConfig",
+      "_params": {
+        "$construct_type": "editor.run.ProgramRunConfigParameters",
+        "_name": "Main",
+        "_fqn": "oodesign.Main",
+        "_vmArgs": null,
+        "_progArgs": null,
+        "_workingDir": null,
+        "_jre": null,
+        "_bJre": 0
+      }
+    },
+    {
+      "$construct_type": "editor.run.ProgramRunConfig",
+      "_params": {
+        "$construct_type": "editor.run.ProgramRunConfigParameters",
+        "_name": "Main",
+        "_fqn": "classes.Main",
+        "_vmArgs": null,
+        "_progArgs": null,
+        "_workingDir": null,
+        "_jre": null,
+        "_bJre": 0
+      }
+    }
+  ],
+  "MruRunConfig": "Main",
   "Settings": [
     {
       "$construct_type": "editor.settings.CompilerSettings",
