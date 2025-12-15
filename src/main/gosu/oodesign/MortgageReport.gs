@@ -3,6 +3,7 @@ package oodesign
 uses java.text.NumberFormat
 
 class MortgageReport {
+  final var _currency = NumberFormat.getCurrencyInstance()
   var _calculator : MortgageCalculator
 
   construct(calculator : MortgageCalculator) {
@@ -25,7 +26,7 @@ class MortgageReport {
 
   function printMortgage() {
     var mortgage = _calculator.calculateMortgage()
-    var mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage)
+    var mortgageFormatted = _currency.format(mortgage)
 
     print("MORTGAGE")
     print("--------")
@@ -38,7 +39,7 @@ class MortgageReport {
     print("----------------")
 
     for (balance in _calculator.getRemainingBalances()) {
-      print(NumberFormat.getCurrencyInstance().format(balance))
+      print(_currency.format(balance))
     }
   }
 }
