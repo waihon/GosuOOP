@@ -8,6 +8,7 @@ class UIControl {
     var control = new UIControl()
     control.disable()
     print(control.Enabled)
+    print("-----")
   }
   
   function enable() : void {
