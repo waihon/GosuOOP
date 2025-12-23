@@ -1,9 +1,14 @@
 package inheritance
 
 class UIControl {
-  
+
   var _isEnabled : Boolean as readonly Enabled = true
-  
+
+  construct() {
+    print("UIControl")
+    print("-----")
+  }
+
   static function main() : void {
     var control = new UIControl()
     control.disable()

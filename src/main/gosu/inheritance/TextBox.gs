@@ -4,6 +4,11 @@ class TextBox extends UIControl {
 
   var _text : String as Text
 
+  construct() {
+    print("TextBox")
+    print("-----")
+  }
+
   static function main() {
     var control = new TextBox()
     control.disable()
