@@ -2,6 +2,7 @@ package inheritance
 
 class TextBox extends UIControl {
 
+  // Class fields have private access by default
   var _text : String as Text
 
   construct() {
@@ -25,6 +26,7 @@ class TextBox extends UIControl {
     print(box1.toString())   // inheritance.TextBox@6b5894c8 (hash code in hex)
   }
 
+  // Class methods have public access by default
   function clear() : void {
     _text = ""
   }

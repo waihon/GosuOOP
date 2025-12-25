@@ -2,6 +2,7 @@ package inheritance
 
 class UIControl {
 
+  // Class fields have private access by default
   var _isEnabled : boolean as readonly Enabled = true
 
   construct(isEnabled : boolean) {
@@ -18,6 +19,7 @@ class UIControl {
     print("-----")
   }
   
+  // Class methods have public access by default
   function enable() : void {
     _isEnabled = true
   }
