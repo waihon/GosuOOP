@@ -92,3 +92,10 @@ print("-----")
 //
 print(Employee4.NumberOfEmployees) // 2
 Employee4.printNumberOfEmployees() // 2
+
+print("-----")
+
+//
+// Access Modifiers
+// 
+External.main()
