@@ -5,6 +5,7 @@ class UIControl {
   // Class fields have private access by default
   var _isEnabled : boolean as readonly Enabled = true
   internal var _internalState : String = "Stable"
+  protected var _protectedState : String = "Unstable"
 
   construct(isEnabled : boolean) {
     print("UIControl")
