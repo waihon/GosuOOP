@@ -19,11 +19,13 @@ class TextBox extends UIControl {
     print("-----")
 
     var box1 = new TextBox()
+    box1.Text = "Hello"
     var box2 = box1
     print(box1.hashCode())   // e.g. 1800967368 (decimal)
     print(box2.hashCode())   // Same hash code as box1
     print(box1.equals(box2)) // true
-    print(box1.toString())   // inheritance.TextBox@6b5894c8 (hash code in hex)
+    print(box1.toString())   // Hello (used to be inheritance.TextBox@6b5894c8 (hash code in hex))
+    print(box2)              // Hello
   }
 
   // Class methods have public access by default
@@ -31,4 +33,8 @@ class TextBox extends UIControl {
     _text = ""
   }
   
+  override function toString() : String {
+    return _text
+  }
+
 }
