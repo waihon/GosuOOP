@@ -19,6 +19,15 @@ class UIControl {
     control.disable()
     print(control.Enabled) // false
     print("-----")
+
+    var textBox = new TextBox()
+    textBox.Text = "Hello"
+    show(textBox)
+  }
+
+  static function show(control : UIControl) {
+    var textBox = control as TextBox // Downcasting
+    print(textBox.Text) // Hello
   }
   
   // Class methods have public access by default
